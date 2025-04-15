@@ -1,0 +1,25 @@
+N_SUBJECTS: 15
+N_RUNS: 10
+
+N_MOVEMENTS: 7
+MOVEMENTS:
+  - 'Elbow Flexion'
+  - 'Elbow Extension'
+  - 'Supination'
+  - 'Pronation'
+  - 'Hand Closing'
+  - 'Hand Opening'
+  - 'Rest'
+
+N_SESSIONS: 2
+SESSIONS:
+  - 'MOTOR-IMAGERY'
+  - 'MOTOR-EXECUTION'
+
+ZENODO_ID: '834976'
+PACKAGE_DIR: "drive/MyDrive/elbow_MI/packages"
+GDF_DIR: "dataset/gdf_files"
+MAT_DIR: "dataset/mat_files"
+DATASET_DIR: "drive/MyDrive/elbow_MI/dataset"
+SIGNALS_DIR: "drive/MyDrive/elbow_MI/signals"
+FEATURES_DIR: "drive/MyDrive/elbow_MI/features"
