@@ -29,6 +29,6 @@ A --> B --> C
     D3 --> E --> F --> SPEC_CNN_2
 
 class D1,D2,D3,E,F optional
-classDef optional fill:#f0f0f0,stroke:#555,stroke-dasharray: 5 5
+classDef optional fill:#ffffff,stroke:#000000,stroke-dasharray: 5 5
 
  ```
