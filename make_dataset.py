@@ -10,7 +10,7 @@ with open("config.yaml", "r") as f:
   config = yaml.safe_load(f)
 
 n_subjects = config["N_SUBJECTS"]
-n_runs = 1  #config["N_RUNS"]
+n_runs = config["N_RUNS"]
 zenodo_id = config["ZENODO_ID"]
 gdf_dir = config["GDF_DIR"]
 mat_dir = config["MAT_DIR"]
