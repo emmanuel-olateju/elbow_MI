@@ -1,0 +1,46 @@
+Exp_0.1: 
+    This experiment aims to search for optimal embedding dimension parameters whcih optimize performance accross subjects
+    without (simulated) data-augmentation through multi-attention heads, making use of shallow transformer encoders. As 
+    such we fix number of multi-attention heads per encoder to be one (A=1) and the number of encoders also is fixed as 
+    one (L=1). We then increase transformer embedding size (E) from 64 to 256 in power steps, and increase feedforward 
+    dimension size (F) from 128 to 1024 also in power steps.
+
+Exp_0.2:
+    With this experiment, we simulate data-augmentation by incresing the number of multi-attention heads muliplying by 2.
+    This is done after obtaining embedding size and feedforward dimension size that performa close to the GDCNet without 
+    DGCAN data-augmentation. We increase attention heads from 1 to 8 in steps multiplying previous values by 2 at each step.
+
+Exp_0.3:
+    This experiment makes use of the best parameters determined from Exp_0.1 and Exp_0.2. Then we increase the depth of 
+    the transformer encoder by one making L=2 and observe the effect of this on mean accruacy and kappa values.
+
+
+Exp 1.1:
+    Using the best parameters from Exp_0.3; this experiments tests the effect of time-points detrending and channel-wise 
+    detrending on model performance. The model likewise tests fthe effect of min-max scaling of channles spectrograms 
+    compared to that of epoch (trial) min-max scaling of spectrograms.
+
+Exp 1.2:
+    This experiment after determining the effects of detrending and spectrograms scaling approahces, adopts the best 
+    approach and transformer-encoder parameters from Exp_0.3, and then further fine tune all transformer-encoder parameters 
+    to develop the best performing model.
+
+Exp 1.3: LOSO (Cross-Subject Transfer Learning Study)
+
+Exp 1.4: Cross-Subjects to Subject Pre-training & Fine-tuning Study
+
+Exp 1.4: CNN Backbone Representational Alignment
+
+
+---------------------------- TRANSFER LEARNING STUDY (v1) ---------------------------------------------
+Exp_2.1
+    We compare the effect on training the CNN-T with the best parameters from Exp_1.2 with all subjects data from the 
+    BCI competition IV Dataset-2b using 10-fold cross-validation. We replace STFT computation with 
+    scipy.ShortTimeFFT.spectrogram comparing the effects of window type (sine-tapered vs hann) and the effect of 
+    inreasing the number of FFT points (NFFT) at each segment step on the CNN-T performance, checkpointing the best 
+    performing model for each configuration of STFT parameters.
+
+Exp_2.2
+    We then explore the effects of time-resolution on CNN-T performance varying the window size and the step size 
+    between segments. We still make use of 10-fold cross-validation checkpointing the best performing model for 
+    each window and step size pair configuration.
